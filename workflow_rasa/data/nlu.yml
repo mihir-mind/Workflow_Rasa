@@ -1,0 +1,215 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - Hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - see ya
+
+- intent: affirm
+  examples: |
+    - Yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yo
+    - Yap
+    - sure
+    - ok
+    - why not
+    - ok great
+    - yes I did
+    - yeah, great
+    - pretty good
+    - fine
+    - You bet
+    - I sure did
+    - more or less
+
+- intent: deny
+  examples: |
+    - No
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - Nah
+    - none
+    - absolutely not
+    - no thanks
+    - didn't do any
+    - no I didn't
+    - could have been better
+    - not great
+    - nope
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: welcome
+  examples: |
+    - introduce yourself
+    - who?
+
+- intent: thankyou
+  examples: |
+    - okay great thanks
+    - thank you
+    - sure thanks
+    - thanks bye
+
+- intent: out_of_scope
+  examples: |
+    - that's not what I want to do
+    - wait stop
+    - you're no help
+    - this is no help at all
+    - how old are you
+    - I want to order a pizza
+    - tell me the weather
+    - this isn't working
+    - I already told you that
+    - don't like that
+    - I don't want to tell you that
+    - none of your business
+    - that's not right
+    - stop asking
+    - nevermind
+    - I want to do something else
+    - I changed my mind
+
+- intent: web_technology
+  examples: |
+    - Web
+    - website
+    - web
+
+- intent: mobile_technology
+  examples: |
+    - Mobile
+    - phone
+    - mobile
+    - app
+
+- intent: uiux_technology
+  examples: |
+    - UI/UX
+    - ui
+    - ux
+    - design
+
+- intent: gaming_technology
+  examples: |
+    - Gaming
+    - game
+
+- intent: other_technology
+  examples: |
+    - Other
+    - cloud
+    - iot
+
+- intent: existing_project
+  examples: |
+    - Existing Project
+    - I have a project
+    - 
+
+- intent: new_project
+  examples: |
+    - New Proejct
+    - make new proejct
+
+- intent: client_name_entry
+  examples: |
+    - My name is [Rohit Sharma] (client_name)
+    - [John Doe] (client_name)
+    - I am [Vishnu] (client_name)
+    - [Peter Richard] (client_name)
+    - People call me [Priya] (client_name)
+    - [Jane Doe] (client_name)
+    - [Max Mustermann] (client_name)
+    - You can call me [Supriya] (client_name)
+
+- intent: client_email_entry
+  examples: |
+    - My email is [jhon.juscelino@gmail.com] (client_email)
+    - [max@gmail.com] (client_email)
+    - the email is [fabiojoka@hotmail.com] (client_email)
+    - [test123@ymail.com] is my email (client_email)
+
+- intent: client_mobile_entry
+  examples: |
+    - My mobile number is [+14844578754] (client_mobile)
+    - [+15853042378] is my number (client_mobile)
+    - [((800) 373-3411)] (client_mobile)
+    - [250-555-0199] is my phone number (client_mobile)
+    - my no. [250/555-0199] (client_mobile)

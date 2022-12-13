@@ -1,0 +1,159 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - welcome
+  - thankyou
+  - out_of_scope
+  - web_technology
+  - mobile_technology
+  - uiux_technology
+  - gaming_technology
+  - other_technology
+  - existing_project
+  - new_project
+  - client_name_entry
+  - client_email_entry
+  - client_mobile_entry
+
+entities:
+  - client_name
+  - client_email
+  - client_mobile
+
+slots:
+  client_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        entity: client_name
+  client_email:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        entity: client_email
+  client_mobile:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        entity: client_mobile
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am MI Bot."
+
+  utter_welcome:
+  - text: "Welcome to MindInventory."
+
+  utter_ask_options:
+  - text: Are you looking for anything specific?
+    buttons:
+      - title: Yes
+        payload: /affirm
+      - title: No
+        payload: /deny
+
+  utter_what_you_looking_for:
+  - text: Please select what you are looking for?
+    buttons:  
+      - title: Web
+        payload: /web_technology
+      - title: Mobile
+        payload: /mobile_technology
+      - title: UI/UX
+        payload: /uiux_technology
+      - title: Gaming
+        payload: /gaming_technology
+      - title: Other
+        payload: /other_technology
+
+  utter_old_project_or_new_project:
+  - text: Great. Please select any one.
+    buttons:
+      - title: Existing Project
+        payload: /existing_project
+      - title: New Proejct
+        payload: /new_project
+
+  utter_web_development_service:
+  - text: click on the link for more information. [Web Development Services](https://www.mindinventory.com/web-development.php)
+
+  utter_mobile_development_service:
+  - text: click on the link for more information. [Mobile Development Services](https://www.mindinventory.com/mobile-app-development.php)
+
+  utter_uiux_development_service:
+  - text: click on the link for more information. [UI/UX Development Services](https://www.mindinventory.com/ui-ux-design-services.php)
+
+  utter_game_development_service:
+  - text: click on the link for more information. [Game Development Services](https://www.mindinventory.com/game-development-services.php)
+
+  utter_other_development_service:
+  - text: click on the link for more information. [Other Development Services](https://www.mindinventory.com/services.php)
+
+  utter_details_form:
+  - text: "Before we get started, Please share your detail so we can connect later."
+
+  utter_ask_for_other_help:
+  - text: "What other help can we provide from our side?"
+
+  utter_ask_client_name:
+  - text: "What is your name?"
+
+  utter_ask_client_email:
+  - text: "What is your email?"
+
+  utter_ask_client_mobile:
+  - text: "What is your mobile no?"
+
+  utter_ask_continue:
+  - text: "Sorry, I don't quite understand. Do you want to continue?"
+
+  utter_no_worries:
+  - text: "No problem :)"
+
+  utter_out_of_scope:
+  - text: Sorry, I can't handle that request, Please try with different request.
+
+  utter_submit:
+    - text: "Thanks for the information."
+
+
+forms:
+  client_details_form:
+    required_slots:
+      - client_name
+      - client_email
+      - client_mobile
+
+actions:
+  - validate_client_details_form
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

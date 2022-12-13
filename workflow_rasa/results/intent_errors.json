@@ -1,0 +1,18 @@
+[
+  {
+    "text": "don't like that",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.4875539243221283
+    }
+  },
+  {
+    "text": "who?",
+    "intent": "welcome",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9858013987541199
+    }
+  }
+]
