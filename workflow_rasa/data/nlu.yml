@@ -126,25 +126,25 @@ nlu:
     - sure thanks
     - thanks bye
 
-- intent: out_of_scope
-  examples: |
-    - that's not what I want to do
-    - wait stop
-    - you're no help
-    - this is no help at all
-    - how old are you
-    - I want to order a pizza
-    - tell me the weather
-    - this isn't working
-    - I already told you that
-    - don't like that
-    - I don't want to tell you that
-    - none of your business
-    - that's not right
-    - stop asking
-    - nevermind
-    - I want to do something else
-    - I changed my mind
+# - intent: out_of_scope
+#   examples: |
+#     - that's not what I want to do
+#     - wait stop
+#     - you're no help
+#     - this is no help at all
+#     - how old are you
+#     - I want to order a pizza
+#     - tell me the weather
+#     - this isn't working
+#     - I already told you that
+#     - don't like that
+#     - I don't want to tell you that
+#     - none of your business
+#     - that's not right
+#     - stop asking
+#     - nevermind
+#     - I want to do something else
+#     - I changed my mind
 
 - intent: web_technology
   examples: |
@@ -181,7 +181,6 @@ nlu:
   examples: |
     - Existing Project
     - I have a project
-    - 
 
 - intent: new_project
   examples: |
@@ -213,3 +212,13 @@ nlu:
     - [((800) 373-3411)] (client_mobile)
     - [250-555-0199] is my phone number (client_mobile)
     - my no. [250/555-0199] (client_mobile)
+
+- intent: client_country_entry
+  examples: |
+    - My country is [USA] (client_country)
+    - [India] is my country (client_country)
+    - [UAE] (client_country)
+    - I am from [China] (client_country)
+    - my country [Canada] (client_country)
+    - I am belong to [Brazil] (client_country)
+    - I live in [Germany] (client_country)

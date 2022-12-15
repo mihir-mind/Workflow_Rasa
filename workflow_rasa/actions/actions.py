@@ -24,18 +24,18 @@ class ValidateClientDetailsForm(FormValidationAction):
         tracker: Tracker,
         domain: DomainDict,
     ) -> Dict[Text, Any]:
-        """Validate name value."""
+        """Validate client name value."""
 
         print(">>>>><<<<<<", tracker.get_slot('options'))
         print("$$$$$$$$", slot_value)
 
         if len(slot_value) == 0 or len(slot_value) > 1:
             # validation succeeded, set the value of the "name" slot to value
-            return {"name": slot_value}
+            return {"client_name": slot_value}
         else:
             # validation failed, set this slot to None so that the
             # user will be asked for the slot again
-            return {"name": None}
+            return {"client_name": None}
 
 
 # class ActionDefaultFallback(Action):

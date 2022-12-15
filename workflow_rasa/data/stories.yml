@@ -35,67 +35,68 @@ stories:
   - action: utter_welcome
   - action: utter_ask_options
   - intent: affirm
-  # - action: client_details_form
-  # - active_loop: client_details_form
+  - action: utter_details_form
+  - action: client_details_form
+  - active_loop: client_details_form
   # - intent: out_of_scope
-  # - action: utter_ask_continue
-  # - intent: affirm
-  # - action: client_details_form
-  # - active_loop: null
-  # - action: utter_submit
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: client_details_form
+  - active_loop: null
+  - action: utter_submit
   - action: utter_what_you_looking_for
   - intent: web_technology
   - action: utter_old_project_or_new_project
   - intent: existing_project
   - action: utter_web_development_service
 
-- story: MI workflow v1 mobile development
-  steps:
-  - intent: welcome
-  - action: utter_welcome
-  - action: utter_ask_options
-  - intent: affirm
-  - action: utter_what_you_looking_for
-  - intent: mobile_technology
-  - action: utter_old_project_or_new_project
-  - intent: existing_project
-  - action: utter_mobile_development_service
+# - story: MI workflow v1 mobile development
+#   steps:
+#   - intent: welcome
+#   - action: utter_welcome
+#   - action: utter_ask_options
+#   - intent: affirm
+#   - action: utter_what_you_looking_for
+#   - intent: mobile_technology
+#   - action: utter_old_project_or_new_project
+#   - intent: existing_project
+#   - action: utter_mobile_development_service
 
-- story: MI workflow v1 ui/ux development
-  steps:
-  - intent: welcome
-  - action: utter_welcome
-  - action: utter_ask_options
-  - intent: affirm
-  - action: utter_what_you_looking_for
-  - intent: uiux_technology
-  - action: utter_old_project_or_new_project
-  - intent: existing_project
-  - action: utter_uiux_development_service
+# - story: MI workflow v1 ui/ux development
+#   steps:
+#   - intent: welcome
+#   - action: utter_welcome
+#   - action: utter_ask_options
+#   - intent: affirm
+#   - action: utter_what_you_looking_for
+#   - intent: uiux_technology
+#   - action: utter_old_project_or_new_project
+#   - intent: existing_project
+#   - action: utter_uiux_development_service
 
-- story: MI workflow v1 game development
-  steps:
-  - intent: welcome
-  - action: utter_welcome
-  - action: utter_ask_options
-  - intent: affirm
-  - action: utter_what_you_looking_for
-  - intent: gaming_technology
-  - action: utter_old_project_or_new_project
-  - intent: existing_project
-  - action: utter_game_development_service
+# - story: MI workflow v1 game development
+#   steps:
+#   - intent: welcome
+#   - action: utter_welcome
+#   - action: utter_ask_options
+#   - intent: affirm
+#   - action: utter_what_you_looking_for
+#   - intent: gaming_technology
+#   - action: utter_old_project_or_new_project
+#   - intent: existing_project
+#   - action: utter_game_development_service
 
-- story: MI workflow v1 other development
-  steps:
-  - intent: welcome
-  - action: utter_welcome
-  - action: utter_ask_options
-  - intent: affirm
-  - action: utter_what_you_looking_for
-  - intent: other_technology
-  - action: utter_old_project_or_new_project
-  - intent: existing_project
-  - action: utter_other_development_service
+# - story: MI workflow v1 other development
+#   steps:
+#   - intent: welcome
+#   - action: utter_welcome
+#   - action: utter_ask_options
+#   - intent: affirm
+#   - action: utter_what_you_looking_for
+#   - intent: other_technology
+#   - action: utter_old_project_or_new_project
+#   - intent: existing_project
+#   - action: utter_other_development_service
 
 
   # - action: utter_details_form

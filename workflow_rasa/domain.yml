@@ -21,31 +21,43 @@ intents:
   - client_name_entry
   - client_email_entry
   - client_mobile_entry
+  - client_country_entry
 
 entities:
   - client_name
   - client_email
   - client_mobile
+  - client_country
 
 slots:
   client_name:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_text
+      - type: from_entity
         entity: client_name
+        intent: client_name_entry
   client_email:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_text
+      - type: from_entity
         entity: client_email
+        intent: client_email_entry
   client_mobile:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_text
+      - type: from_entity
         entity: client_mobile
+        intent: client_mobile_entry
+  client_country:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: client_country
+        intent: client_country_entry
 
 
 responses:
@@ -131,6 +143,9 @@ responses:
   utter_ask_client_mobile:
   - text: "What is your mobile no?"
 
+  utter_ask_client_country:
+  - text: "Which country you live in?"
+
   utter_ask_continue:
   - text: "Sorry, I don't quite understand. Do you want to continue?"
 
@@ -150,6 +165,7 @@ forms:
       - client_name
       - client_email
       - client_mobile
+      - client_country
 
 actions:
   - validate_client_details_form

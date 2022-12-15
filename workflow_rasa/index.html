@@ -1,3 +1,17 @@
+<html>
+  <body>
+    <style>
+      .rw-widget-container
+      .rw-header{background-color: brown;}
+      .rw-conversation-container
+      .rw-messages-container
+      .rw-message
+      /* .rw-response{background-color: brown;} */
+      .rw-client{background-color: brown;}
+      .rw-launcher{background-color: brown;}
+    </style>
+
+
 <div id="webchat"></div>
 <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.min.js"></script>
 <section>
@@ -21,6 +35,7 @@
                   customData: {"language": "en"},
                   socketPath: "/socket.io/",
                   title: "MI BOT",
+                  subtitle: "Testing",
                   params: {"storage": "session"}
                   // add other props here
               },
@@ -30,6 +45,10 @@
       t.insertBefore(e, t.firstChild);
   })();
 </script>
+
+
+  </body>
+</html>
 
 
 <!--<div id="rasa-chat-widget" data-websocket-url="https://0.0.0.0:5005"></div>-->

@@ -12,3 +12,9 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
+- rule: activate client details form
+  steps:
+    - intent: utter_details_form
+    - action: client_details_form
+    - active_loop: client_details_form
+
