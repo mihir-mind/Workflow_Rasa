@@ -32,32 +32,43 @@ entities:
 slots:
   client_name:
     type: text
-    influence_conversation: true
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: client_name
-        intent: client_name_entry
+        # intent: client_name_entry
   client_email:
     type: text
-    influence_conversation: true
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: client_email
-        intent: client_email_entry
+        # intent: client_email_entry
   client_mobile:
     type: text
-    influence_conversation: true
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: client_mobile
-        intent: client_mobile_entry
+        # intent: client_mobile_entry
   client_country:
     type: text
-    influence_conversation: true
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: client_country
-        intent: client_country_entry
+        # intent: client_country_entry
+
+forms:
+  client_details_form:
+    required_slots:
+      - client_name
+      - client_email
+      - client_mobile
+      - client_country
+
+actions:
+  - validate_client_details_form
 
 
 responses:
@@ -158,17 +169,18 @@ responses:
   utter_submit:
     - text: "Thanks for the information."
 
+  utter_wrong_client_name:
+    - text: "client name is not valid, please try again."
 
-forms:
-  client_details_form:
-    required_slots:
-      - client_name
-      - client_email
-      - client_mobile
-      - client_country
+  utter_wrong_client_email:
+    - text: "Please enter valid email."
 
-actions:
-  - validate_client_details_form
+  utter_wrong_client_mobile:
+    - text: "Please enter valid mobile number."
+
+  utter_wrong_client_country:
+    - text: "Please enter valid country name."
+
 
 session_config:
   session_expiration_time: 60

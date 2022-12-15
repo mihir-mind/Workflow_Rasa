@@ -35,15 +35,15 @@ stories:
   - action: utter_welcome
   - action: utter_ask_options
   - intent: affirm
-  - action: utter_details_form
-  - action: client_details_form
-  - active_loop: client_details_form
-  # - intent: out_of_scope
-  - action: utter_ask_continue
-  - intent: affirm
-  - action: client_details_form
-  - active_loop: null
-  - action: utter_submit
+  # - action: utter_details_form
+  # - action: client_details_form
+  # - active_loop: client_details_form
+  # # - intent: out_of_scope
+  # - action: utter_ask_continue
+  # - intent: affirm
+  # - action: client_details_form
+  # - active_loop: null
+  # - action: utter_submit
   - action: utter_what_you_looking_for
   - intent: web_technology
   - action: utter_old_project_or_new_project

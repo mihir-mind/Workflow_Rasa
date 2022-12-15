@@ -1,7 +1,8 @@
 # from rasa_sdk.forms import FormAction
 from typing import Text, List, Any, Dict, Union
 
-from rasa_sdk import Action, Tracker, FormValidationAction
+from rasa_sdk import Action, Tracker
+from rasa_sdk.forms import FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import UserUtteranceReverted
 from rasa_sdk.types import DomainDict
@@ -17,22 +18,23 @@ class ValidateClientDetailsForm(FormValidationAction):
 
     #     return ["caribbean", "chinese", "french"]
 
-    def validate_name(
+    def validate_client_name(
         self,
-        slot_value: Any,
+        value: Text,
         dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: DomainDict,
     ) -> Dict[Text, Any]:
         """Validate client name value."""
 
-        print(">>>>><<<<<<", tracker.get_slot('options'))
-        print("$$$$$$$$", slot_value)
+        print(">>>>><<<<<<", tracker.get_slot('client_name'))
+        print("$$$$$$$$", value)
 
-        if len(slot_value) == 0 or len(slot_value) > 1:
+        if len(value) == 0 or len(value) > 1:
             # validation succeeded, set the value of the "name" slot to value
-            return {"client_name": slot_value}
+            return {"client_name": value}
         else:
+            dispatcher.utter_message(response="utter_wrong_client_name")
             # validation failed, set this slot to None so that the
             # user will be asked for the slot again
             return {"client_name": None}
