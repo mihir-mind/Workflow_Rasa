@@ -64,7 +64,6 @@ opt-einsum==3.3.0
 packaging==20.9
 pamqp==2.3.0
 partd==1.2.0
-phonenumbers==8.13.2
 Pillow==9.1.1
 prompt-toolkit==2.0.10
 protobuf==3.19.4

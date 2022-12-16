@@ -1,5 +1,4 @@
 import re
-import phonenumbers
 
 from typing import Text, List, Any, Dict, Union
 from rasa_sdk import Tracker, FormValidationAction
@@ -64,9 +63,20 @@ class ValidateDetailsForm(FormValidationAction):
         """Validate mobile value."""
 
         slot_value = slot_value.strip()
-        mobile_number = phonenumbers.parse(slot_value)
 
-        if phonenumbers.is_possible_number(mobile_number):
+        valid_mo_num = re.match(r'(\+[0-9]+\s*)?(\([0-9]+\))?[\s0-9\-]+[0-9]+', slot_value)
+        if valid_mo_num:
+            mo_num = slot_value.replace("-", "")
+            mo_num = mo_num.replace(r"\(.*\)","")
+            if len(mo_num) > 10:
+                if mo_num.startswith("+"):
+                    valid_mo_num = True
+                else:
+                    valid_mo_num = False
+            elif len(mo_num) < 10:
+                valid_mo_num = False
+
+        if valid_mo_num:
             # validation succeeded, set the value of the "mobile" slot to value
             return {"mobile": slot_value}
         else:

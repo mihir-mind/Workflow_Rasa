@@ -29,41 +29,33 @@ slots:
     influence_conversation: true
     mappings:
       - type: from_text
-        # entity: name
         conditions: 
           - active_loop: details_form
             requested_slot: name
-        # intent: client_name_entry
   email:
     type: text
     influence_conversation: true
     mappings:
       - type: from_text
-        # entity: email
         conditions: 
           - active_loop: details_form
             requested_slot: email
-        # intent: client_email_entry
   mobile:
     type: text
     influence_conversation: true
     mappings:
       - type: from_text
-        # entity: mobile
         conditions: 
           - active_loop: details_form
             requested_slot: mobile
-        # intent: client_mobile_entry
   country:
     type: text
     influence_conversation: true
     mappings:
       - type: from_text
-        # entity: country
         conditions: 
           - active_loop: details_form
             requested_slot: country
-        # intent: client_country_entry
 
 forms:
   details_form:
@@ -165,6 +157,11 @@ responses:
 
   utter_ask_continue:
   - text: "Sorry, I don't quite understand. Do you want to continue?"
+    buttons:
+      - title: Yes
+        payload: /affirm
+      - title: No
+        payload: /deny
 
   utter_no_worries:
   - text: "No problem :)"
