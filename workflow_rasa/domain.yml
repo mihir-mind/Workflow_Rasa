@@ -18,57 +18,63 @@ intents:
   - other_technology
   - existing_project
   - new_project
-  - client_name_entry
-  - client_email_entry
-  - client_mobile_entry
-  - client_country_entry
-
-entities:
-  - client_name
-  - client_email
-  - client_mobile
-  - client_country
+  - name_entry
+  - email_entry
+  - mobile_entry
+  - country_entry
 
 slots:
-  client_name:
+  name:
     type: text
-    influence_conversation: false
+    influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: client_name
+      - type: from_text
+        # entity: name
+        conditions: 
+          - active_loop: details_form
+            requested_slot: name
         # intent: client_name_entry
-  client_email:
+  email:
     type: text
-    influence_conversation: false
+    influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: client_email
+      - type: from_text
+        # entity: email
+        conditions: 
+          - active_loop: details_form
+            requested_slot: email
         # intent: client_email_entry
-  client_mobile:
+  mobile:
     type: text
-    influence_conversation: false
+    influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: client_mobile
+      - type: from_text
+        # entity: mobile
+        conditions: 
+          - active_loop: details_form
+            requested_slot: mobile
         # intent: client_mobile_entry
-  client_country:
+  country:
     type: text
-    influence_conversation: false
+    influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: client_country
+      - type: from_text
+        # entity: country
+        conditions: 
+          - active_loop: details_form
+            requested_slot: country
         # intent: client_country_entry
 
 forms:
-  client_details_form:
+  details_form:
     required_slots:
-      - client_name
-      - client_email
-      - client_mobile
-      - client_country
+      - name
+      - email
+      - mobile
+      - country
 
 actions:
-  - validate_client_details_form
+  - validate_details_form
 
 
 responses:
@@ -145,16 +151,16 @@ responses:
   utter_ask_for_other_help:
   - text: "What other help can we provide from our side?"
 
-  utter_ask_client_name:
+  utter_ask_name:
   - text: "What is your name?"
 
-  utter_ask_client_email:
+  utter_ask_email:
   - text: "What is your email?"
 
-  utter_ask_client_mobile:
+  utter_ask_mobile:
   - text: "What is your mobile no?"
 
-  utter_ask_client_country:
+  utter_ask_country:
   - text: "Which country you live in?"
 
   utter_ask_continue:
@@ -169,16 +175,16 @@ responses:
   utter_submit:
     - text: "Thanks for the information."
 
-  utter_wrong_client_name:
-    - text: "client name is not valid, please try again."
+  utter_wrong_name:
+    - text: "Name is not valid, please try again."
 
-  utter_wrong_client_email:
+  utter_wrong_email:
     - text: "Please enter valid email."
 
-  utter_wrong_client_mobile:
+  utter_wrong_mobile:
     - text: "Please enter valid mobile number."
 
-  utter_wrong_client_country:
+  utter_wrong_country:
     - text: "Please enter valid country name."
 
 

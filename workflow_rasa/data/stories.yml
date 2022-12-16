@@ -35,15 +35,33 @@ stories:
   - action: utter_welcome
   - action: utter_ask_options
   - intent: affirm
-  # - action: utter_details_form
-  # - action: client_details_form
-  # - active_loop: client_details_form
-  # # - intent: out_of_scope
+  - action: utter_details_form
+  - action: details_form
+  - active_loop: details_form
+  # - intent: out_of_scope
   # - action: utter_ask_continue
   # - intent: affirm
-  # - action: client_details_form
-  # - active_loop: null
-  # - action: utter_submit
+  # - action: details_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: John Doe
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: max@gmail.com
+  - slot_was_set:
+    - requested_slot: mobile
+  - slot_was_set:
+    - mobile: 250/555-0199
+  - slot_was_set:
+    - requested_slot: country
+  - slot_was_set:
+    - country: Canada
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
   - action: utter_what_you_looking_for
   - intent: web_technology
   - action: utter_old_project_or_new_project
