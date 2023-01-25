@@ -1,7 +1,7 @@
 import re
 
 from typing import Text, List, Any, Dict, Union
-from rasa_sdk import Tracker, FormValidationAction
+from rasa_sdk import Tracker, FormValidationAction, Action
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import UserUtteranceReverted
 from rasa_sdk.types import DomainDict
@@ -106,21 +106,17 @@ class ValidateDetailsForm(FormValidationAction):
             return {"country": None}
 
 
+class ActionSendPortfolioLink(Action):
 
-# class ActionDefaultFallback(Action):
-#     """Executes the fallback action and goes back to the previous state
-#     of the dialogue"""
+    def name(self) -> Text:
+        return "action_send_portfolio_link"
 
-#     def name(self) -> Text:
-#         return ACTION_DEFAULT_FALLBACK_NAME
-
-#     async def run(
-#         self,
-#         dispatcher: CollectingDispatcher,
-#         tracker: Tracker,
-#         domain: Dict[Text, Any],
-#     ) -> List[Dict[Text, Any]]:
-#         dispatcher.utter_message(template="my_custom_fallback_template")
-
-#         # Revert user message which led to fallback.
-#         return [UserUtteranceReverted()]
+    async def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any],) -> List[Dict[Text, Any]]:
+        import time
+        # List of all Portfolio links
+        utter_send_portfolio_link = ["utter_send_portfolio_link_edge_ai", "utter_send_portfolio_link_super_app", "utter_send_portfolio_link_nft_base", "utter_send_portfolio_link_home_rent", "utter_send_portfolio_link_ai_base"]
+        time.sleep(10)
+        for link in utter_send_portfolio_link:
+            time.sleep(1)
+            dispatcher.utter_message(response=link)
+        return [UserUtteranceReverted()]

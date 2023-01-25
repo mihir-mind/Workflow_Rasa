@@ -87,6 +87,7 @@ stories:
   - action: utter_old_project_or_new_project
   - intent: existing_project
   - action: utter_web_development_service
+  - action: action_send_portfolio_link
 
 
 - story: MI workflow v1 mobile development
@@ -96,6 +97,7 @@ stories:
   - action: utter_old_project_or_new_project
   - intent: existing_project
   - action: utter_mobile_development_service
+  - action: action_send_portfolio_link
 
 
 - story: MI workflow v1 ui/ux development
@@ -105,6 +107,7 @@ stories:
   - action: utter_old_project_or_new_project
   - intent: existing_project
   - action: utter_uiux_development_service
+  - action: action_send_portfolio_link
 
 
 - story: MI workflow v1 game development
@@ -114,6 +117,7 @@ stories:
   - action: utter_old_project_or_new_project
   - intent: existing_project
   - action: utter_game_development_service
+  - action: action_send_portfolio_link
 
 
 - story: MI workflow v1 other development
@@ -123,6 +127,7 @@ stories:
   - action: utter_old_project_or_new_project
   - intent: existing_project
   - action: utter_other_development_service
+  - action: action_send_portfolio_link
 
 
 - story: MI workflow v2 web development
@@ -132,6 +137,7 @@ stories:
   - action: utter_old_project_or_new_project
   - intent: new_project
   - action: utter_web_development_service
+  - action: action_send_portfolio_link
 
 
 - story: MI workflow v2 mobile development
@@ -141,6 +147,7 @@ stories:
   - action: utter_old_project_or_new_project
   - intent: new_project
   - action: utter_mobile_development_service
+  - action: action_send_portfolio_link
 
 
 - story: MI workflow v2 ui/ux development
@@ -150,6 +157,7 @@ stories:
   - action: utter_old_project_or_new_project
   - intent: new_project
   - action: utter_uiux_development_service
+  - action: action_send_portfolio_link
 
 
 - story: MI workflow v2 game development
@@ -159,6 +167,7 @@ stories:
   - action: utter_old_project_or_new_project
   - intent: new_project
   - action: utter_game_development_service
+  - action: action_send_portfolio_link
 
 
 - story: MI workflow v2 other development
@@ -168,3 +177,4 @@ stories:
   - action: utter_old_project_or_new_project
   - intent: new_project
   - action: utter_other_development_service
+  - action: action_send_portfolio_link
