@@ -67,6 +67,7 @@ forms:
 
 actions:
   - validate_details_form
+  - action_send_portfolio_link
 
 
 responses:
@@ -124,18 +125,23 @@ responses:
 
   utter_web_development_service:
   - text: click on the link for more information. [Web Development Services](https://www.mindinventory.com/web-development.php)
+    image: "https://www.mindinventory.com/static/media/web-app-solutions.d7ac402c.jpg"
 
   utter_mobile_development_service:
   - text: click on the link for more information. [Mobile Development Services](https://www.mindinventory.com/mobile-app-development.php)
+    image: "https://www.mindinventory.com/static/media/web-app-solutions.d7ac402c.jpg"
 
   utter_uiux_development_service:
   - text: click on the link for more information. [UI/UX Development Services](https://www.mindinventory.com/ui-ux-design-services.php)
+    image: "https://www.mindinventory.com/static/media/web-app-solutions.d7ac402c.jpg"
 
   utter_game_development_service:
   - text: click on the link for more information. [Game Development Services](https://www.mindinventory.com/game-development-services.php)
+    image: "https://www.mindinventory.com/static/media/web-app-solutions.d7ac402c.jpg"
 
   utter_other_development_service:
   - text: click on the link for more information. [Other Development Services](https://www.mindinventory.com/services.php)
+    image: "https://www.mindinventory.com/static/media/web-app-solutions.d7ac402c.jpg"
 
   utter_details_form:
   - text: "Before we get started, Please share your detail so we can connect later."
@@ -184,7 +190,21 @@ responses:
   utter_wrong_country:
     - text: "Please enter valid country name."
 
+  utter_send_portfolio_link_edge_ai:
+    - text: Portfolio - [Edge-AI Platform for Enterprise](https://www.mindinventory.com/portfolio/edge-ai-based-app.php)
+
+  utter_send_portfolio_link_super_app:
+    - text: Portfolio - [Super App](https://www.mindinventory.com/portfolio/super-app.php)
+
+  utter_send_portfolio_link_nft_base:
+    - text: Portfolio - [NFT based Social Network](https://www.mindinventory.com/portfolio/nft-based-social-network.php)
+
+  utter_send_portfolio_link_home_rent:
+    - text: Portfolio - [Home Rental Platform](https://www.mindinventory.com/portfolio/home-rental-platform.php)
+
+  utter_send_portfolio_link_ai_base:
+    - text: Portfolio - [AI-Based Coding Platform](https://www.mindinventory.com/portfolio/ai-powered-coding-platform.php)
 
 session_config:
-  session_expiration_time: 60
+  session_expiration_time: 5
   carry_over_slots_to_new_session: true

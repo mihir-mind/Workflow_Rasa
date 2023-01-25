@@ -1,23 +1,6 @@
 version: "3.1"
 
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - Hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
 - intent: goodbye
   examples: |
     - cu
@@ -116,6 +99,20 @@ nlu:
 
 - intent: welcome
   examples: |
+    - hey
+    - hello
+    - hi
+    - Hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
     - introduce yourself
     - who are you?
 
