@@ -85,7 +85,7 @@ env
 rasa/segment_key
 rasa/keys
 .rasa
-/results/
+Workflow_Rasa/workflow_rasa/results/
 # Local Netlify folder
 .netlify
 rasa.code-workspace
