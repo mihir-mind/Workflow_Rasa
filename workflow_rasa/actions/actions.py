@@ -1,4 +1,5 @@
 import re
+import sqlite3
 
 from typing import Text, List, Any, Dict, Union
 from rasa_sdk import Tracker, FormValidationAction, Action
@@ -8,6 +9,8 @@ from rasa_sdk.types import DomainDict
 
 
 class ValidateDetailsForm(FormValidationAction):
+    con = sqlite3.connect("chatDB.db")
+    cur = con.cursor()
 
     def name(self) -> Text:
         return "validate_details_form"
@@ -98,6 +101,9 @@ class ValidateDetailsForm(FormValidationAction):
         slot_value = slot_value.strip()
         if len(slot_value) > 1 and not slot_value.isdigit() and slot_value.isalpha():
             # validation succeeded, set the value of the "mobile" slot to value
+            query = f"""INSERT INTO ChatData VALUES ('{tracker.slots.get("name")}', '{tracker.slots.get("email")}', '{tracker.slots.get("mobile")}', '{tracker.slots.get("country")}');"""
+            self.cur.execute(query)
+            self.con.commit()
             return {"country": slot_value}
         else:
             dispatcher.utter_message(response="utter_wrong_country")
